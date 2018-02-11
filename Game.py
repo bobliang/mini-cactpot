@@ -28,3 +28,4 @@ while(True):
 	x = input ("Play again? ([y]/n) ")
 	if (x == "n"):
 		break
+	board = Board()
