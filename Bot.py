@@ -150,7 +150,29 @@ class Bot:
                 bestLoc = index
         return (index, bestScore)
 
+    def bestMove(self, board):
+        numbers = set(board)
+        N = len(numbers) - 1
+        return self.d[N][board]
 
-bot = Bot(training=True, save=True)
-
-bot.bestChoiceLastStep((" ", 1, 7, " ", 4, 8, " ", " ", " "))
+    def tileName(self, n):
+        if n == 0:
+            return "top left"
+        elif n == 1:
+            return "top"
+        elif n == 2:
+            return "top right"
+        elif n == 3:
+            return "left"
+        elif n == 4:
+            return "middle"
+        elif n == 5:
+            return "right"
+        elif n == 6:
+            return "bottom left"
+        elif n == 7:
+            return "bottom"
+        elif n == 8:
+            return "bottom right"
+        else:
+            return "error"

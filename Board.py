@@ -27,11 +27,7 @@ class Board:
         self.scoring[24] = 3600
 
     def linearize(self):
-        result = []
-        for sublist in l:
-            for item in sublist:
-                    result.append(item)
-        return result
+        return tuple(self.visible[0] + self.visible[1] + self.visible[2])
 
     def display(self):
         for i in range(40):
