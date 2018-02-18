@@ -63,12 +63,12 @@ class Bot:
                     self.d[i][board] = self.bestChoice(board, i)
 
             if save:
-                file = open(r'/home/bobliang/Code/mini-cactpot/solution.pkl',
+                file = open(r'./solution.pkl',
                             'wb')
                 pickle.dump(self.d, file)
                 file.close()
         else:
-            file = open(r'/home/bobliang/Code/mini-cactpot/solution.pkl', 'rb')
+            file = open(r'./solution.pkl', 'rb')
             self.d = pickle.load(file)
             file.close()
 
@@ -148,7 +148,7 @@ class Bot:
             if expectedScore/len(missingNumbers) > bestScore:
                 bestScore = expectedScore/len(missingNumbers)
                 bestLoc = index
-        return (index, bestScore)
+        return (bestLoc, bestScore)
 
     def bestMove(self, board):
         numbers = set(board)
